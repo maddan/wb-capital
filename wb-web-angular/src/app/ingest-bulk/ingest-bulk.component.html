@@ -1,0 +1,12 @@
+
+<div class="container">
+  <h2>Bulk Ingest (CSV)</h2>
+  <div class="controls">
+    <div><label>City</label><br /><input [(ngModel)]="city" /></div>
+    <div><label>State</label><br /><input [(ngModel)]="state" /></div>
+    <div><label>CSV File</label><br /><input type="file" accept=".csv" (change)="onFile($event)" [disabled]="uploading" /></div>
+  </div>
+  <div *ngIf="uploading">Uploading…</div>
+  <div *ngIf="lastResult"><p><strong>Server response</strong></p><pre>{{ lastResult | json }}</pre></div>
+  <p>Expected headers: <code>source,externalId,title,address,price,noi,capRate,units,sqft</code></p>
+</div>

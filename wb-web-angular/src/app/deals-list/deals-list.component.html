@@ -1,0 +1,84 @@
+<div class="container">
+  <h2>Deals</h2>
+
+  <div class="controls">
+    <div>
+      <label>City</label><br />
+      <input [(ngModel)]="cityFilter" placeholder="Austin" />
+    </div>
+    <div>
+      <label>State</label><br />
+      <input [(ngModel)]="stateFilter" placeholder="TX" />
+    </div>
+    <div>
+      <button (click)="load()">Load</button>
+    </div>
+
+    <div style="flex:1"></div>
+
+    <div>
+      <label>Interest %</label><br />
+      <input type="number" [(ngModel)]="finance.interestRate" step="0.1" />
+    </div>
+    <div>
+      <label>LTV %</label><br />
+      <input type="number" [(ngModel)]="finance.ltv" />
+    </div>
+    <div>
+      <label>Term (yrs)</label><br />
+      <input type="number" [(ngModel)]="finance.termYears" />
+    </div>
+    <div>
+      <label>Min DSCR</label><br />
+      <input type="number" [(ngModel)]="dscrMin" step="0.05" />
+    </div>
+    <div>
+      <label>&nbsp;</label><br />
+      <label><input type="checkbox" [(ngModel)]="applyFinanceFilter" (change)="applyFilters()" /> Use finance filter</label>
+    </div>
+    <div>
+      <label>&nbsp;</label><br />
+      <button (click)="applyFilters()">Filter</button>
+    </div>
+  </div>
+
+  <table class="table" *ngIf="!loading">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Address</th>
+        <th>City/State</th>
+        <th>Units</th>
+        <th>Price</th>
+        <th>NOI</th>
+        <th>Cap %</th>
+        <th *ngIf="applyFinanceFilter">Est DSCR</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of deals">
+        <td>{{ d.title }}</td>
+        <td>{{ d.address }}</td>
+        <td>{{ d.city }}, {{ d.state }}</td>
+        <td>{{ d.units || '—' }}</td>
+        <td>${{ d.price | number:'1.0-0' }}</td>
+        <td *ngIf="d.noi !== undefined">${{ d.noi | number:'1.0-0' }}</td>
+        <td *ngIf="d.noi === undefined">—</td>
+        <td *ngIf="d.capRate !== undefined">{{ d.capRate | number:'1.1-2' }}%</td>
+        <td *ngIf="d.capRate === undefined">—</td>
+        <td *ngIf="applyFinanceFilter">
+          <ng-container *ngIf="d.estDSCR !== undefined; else dash">
+            {{ d.estDSCR | number:'1.2-2' }}
+          </ng-container>
+          <ng-template #dash>—</ng-template>
+        </td>
+        <td>
+          <button (click)="goToCalc(d)">Calc Finance</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="loading">Loading…</div>
+</div>

@@ -1,0 +1,31 @@
+meta {
+  name: Compute Finance
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/api/v1/deals/{{dealId}}/finance
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: {{dealId}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "interestRate": 7,
+    "ltv": 75,
+    "termYears": 30
+  }
+}
+
+settings {
+  encodeUrl: true
+}

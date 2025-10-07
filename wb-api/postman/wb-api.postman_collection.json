@@ -1,0 +1,140 @@
+{
+  "info": {
+    "name": "W&B API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Deal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/deals",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "deals"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"source\": \"manual\",\n  \"title\": \"Test Deal\",\n  \"address\": \"123 Main\",\n  \"city\": \"Raleigh\",\n  \"state\": \"NC\",\n  \"units\": 12,\n  \"price\": 2100000,\n  \"noi\": 168000,\n  \"capRate\": 8.0\n}"
+        }
+      }
+    },
+    {
+      "name": "List Deals",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/v1/deals",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "deals"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Compute Finance",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/deals/{{dealId}}/finance",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "deals",
+            ":id",
+            "finance"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "{{dealId}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"interestRate\": 7,\n  \"ltv\": 75,\n  \"termYears\": 30\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Metrics",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/v1/deals/{{dealId}}/metrics",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "deals",
+            ":id",
+            "metrics"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "{{dealId}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Glossary DSCR",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/v1/glossary/dscr",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "glossary",
+            "dscr"
+          ]
+        }
+      }
+    }
+  ]
+}

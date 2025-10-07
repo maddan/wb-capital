@@ -1,0 +1,33 @@
+meta {
+  name: Create Deal
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/api/v1/deals
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "source": "manual",
+    "title": "Test Deal",
+    "address": "123 Main",
+    "city": "Raleigh",
+    "state": "NC",
+    "units": 12,
+    "price": 2100000,
+    "noi": 168000,
+    "capRate": 8.0
+  }
+}
+
+settings {
+  encodeUrl: true
+}

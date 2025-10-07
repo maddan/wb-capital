@@ -1,0 +1,25 @@
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: wb
+      POSTGRES_PASSWORD: wbpass
+      POSTGRES_DB: wb_core
+    ports:
+      - "5433:5432"
+    volumes:
+      - wbdata:/var/lib/postgresql/data
+  api:
+    build: .
+    command: npm run start:dev
+    environment:
+       DATABASE_URL: postgresql://wb:wbpass@db:5433/wb_core?schema=public
+       JWT_SECRET: devsecret
+       PORT: 3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+volumes:
+  wbdata:

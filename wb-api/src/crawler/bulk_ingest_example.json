@@ -1,0 +1,27 @@
+{
+  "city": "Austin",
+  "state": "TX",
+  "items": [
+    {
+      "source": "crexi",
+      "externalId": "MF-AUS-001",
+      "title": "Eastside Flats - 24 Units",
+      "address": "1201 Oak Grove Ave",
+      "price": 2450000,
+      "noi": 198000,
+      "capRate": 8.08,
+      "units": 24,
+      "sqft": 18500
+    },
+    {
+      "source": "crexi",
+      "externalId": "RET-AUS-101",
+      "title": "Southpark Retail Strip (NNN)",
+      "address": "5701 S Congress Ave",
+      "price": 5150000,
+      "noi": 360500,
+      "capRate": 7.0,
+      "sqft": 28100
+    }
+  ]
+}

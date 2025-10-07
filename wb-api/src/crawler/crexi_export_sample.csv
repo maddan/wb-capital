@@ -1,0 +1,8 @@
+source,externalId,title,address,city,state,price,noi,capRate,units,sqft,notes
+crexi,MF-AUS-001,Eastside Flats - 24 Units,1201 Oak Grove Ave,Austin,TX,2450000,198000,8.08,24,18500,Value-add; 70% occupancy
+crexi,MF-AUS-002,Riverside Gardens - 56 Units,3300 Riverside Dr,Austin,TX,7250000,612000,8.44,56,47400,Near UT shuttle; 2010 roof
+crexi,RET-AUS-101,Southpark Retail Strip (NNN),5701 S Congress Ave,Austin,TX,5150000,360500,7.0,,28100,Weighted avg lease term 6.2 yrs
+crexi,RET-AUS-102,Domain Pad - Single Tenant,11800 Burnet Rd,Austin,TX,3300000,247500,7.5,,5200,Corporate guaranty
+crexi,RV-AUS-201,Lone Star RV Park (80 pads),470 County Rd 170,Austin,TX,3850000,410000,10.65,80,,City water/sewer; metered electric
+crexi,MHP-AUS-301,Cedar Creek MHP (62 pads),1500 Old Manor Rd,Austin,TX,2900000,305000,10.52,62,,Park-owned homes: 4
+crexi,IND-AUS-401,Flex Industrial - Last Mile,9101 Industry Way,Austin,TX,4600000,345000,7.5,,42000,Clear height 22 ft

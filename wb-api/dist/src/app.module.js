@@ -13,12 +13,13 @@ const deals_module_1 = require("./deals/deals.module");
 const finance_module_1 = require("./finance/finance.module");
 const glossary_module_1 = require("./glossary/glossary.module");
 const auth_module_1 = require("./auth/auth.module");
+const ingest_module_1 = require("./ingest/ingest.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [prisma_module_1.PrismaModule, deals_module_1.DealsModule, finance_module_1.FinanceModule, glossary_module_1.GlossaryModule, auth_module_1.AuthModule],
+        imports: [prisma_module_1.PrismaModule, deals_module_1.DealsModule, finance_module_1.FinanceModule, glossary_module_1.GlossaryModule, auth_module_1.AuthModule, ingest_module_1.IngestModule],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

@@ -1,0 +1,33 @@
+meta {
+  name: Post Bulk Ingest Deals
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:3000/api/v1/ingest/bulk
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "source": "manual",
+    "title": "Test Deal",
+    "address": "123 Main",
+    "city": "Durham",
+    "state": "NC",
+    "units": 12,
+    "price": 2100000,
+    "noi": 168000,
+    "capRate": 8.0
+  }
+}
+
+settings {
+  encodeUrl: true
+}
